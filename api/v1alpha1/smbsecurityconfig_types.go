@@ -119,6 +119,7 @@ type SmbSecurityConfigStatus struct {
 	// Important: Run "make" to regenerate code after modifying this file
 }
 
+// +genclient
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 
@@ -138,8 +139,4 @@ type SmbSecurityConfigList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
 	Items           []SmbSecurityConfig `json:"items"`
-}
-
-func init() {
-	SchemeBuilder.Register(&SmbSecurityConfig{}, &SmbSecurityConfigList{})
 }

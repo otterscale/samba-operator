@@ -145,6 +145,7 @@ type SmbShareStatus struct {
 // revive:disable:line-length-limit kubebuilder markers
 
 // nolint:lll
+// +genclient
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:JSONPath=`.spec.shareName`,description="Name of the Samba share",name="Share-name",type=string
@@ -170,8 +171,4 @@ type SmbShareList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
 	Items           []SmbShare `json:"items"`
-}
-
-func init() {
-	SchemeBuilder.Register(&SmbShare{}, &SmbShareList{})
 }

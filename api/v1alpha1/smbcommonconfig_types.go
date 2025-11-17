@@ -82,6 +82,7 @@ type SmbCommonConfigStatus struct {
 	// Important: Run "make" to regenerate code after modifying this file
 }
 
+// +genclient
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 
@@ -101,8 +102,4 @@ type SmbCommonConfigList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
 	Items           []SmbCommonConfig `json:"items"`
-}
-
-func init() {
-	SchemeBuilder.Register(&SmbCommonConfig{}, &SmbCommonConfigList{})
 }
